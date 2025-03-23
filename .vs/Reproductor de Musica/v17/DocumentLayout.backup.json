@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\frmartistas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|solutionrelative:frmartistas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|c:\\users\\sanch\\source\\repos\\reproductor-de-musica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\frmartistas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|solutionrelative:frmartistas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09F2CE82-72CC-490C-B342-2D0718E7DFC2}|Reproductor de Musica.csproj|C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\frmradio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,15 +94,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FrmArtistas.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\FrmArtistas.cs",
               "RelativeDocumentMoniker": "FrmArtistas.cs",
               "ToolTip": "C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\FrmArtistas.cs [Dise\u00F1o]",
               "RelativeToolTip": "FrmArtistas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:42:51.413Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-03-22T22:42:51.413Z"
             },
             {
               "$type": "Document",
@@ -140,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\sanch\\source\\repos\\Reproductor-de-musica\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
