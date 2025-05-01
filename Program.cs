@@ -16,7 +16,7 @@ namespace Reproductor_de_Musica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmArtistas());
+            Application.Run(new FrmInicio());
         }
     }
 }
