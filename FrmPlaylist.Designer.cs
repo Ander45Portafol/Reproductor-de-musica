@@ -355,6 +355,7 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 8;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // pictureBox7
             // 
@@ -395,6 +396,7 @@
             this.label2.Size = new System.Drawing.Size(45, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Inicio";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -406,6 +408,7 @@
             this.label3.Size = new System.Drawing.Size(60, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "Artistas";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -417,6 +420,7 @@
             this.label4.Size = new System.Drawing.Size(76, 19);
             this.label4.TabIndex = 13;
             this.label4.Text = "Canciones";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -428,6 +432,7 @@
             this.label5.Size = new System.Drawing.Size(59, 19);
             this.label5.TabIndex = 14;
             this.label5.Text = "Albums";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -439,6 +444,7 @@
             this.label6.Size = new System.Drawing.Size(48, 19);
             this.label6.TabIndex = 15;
             this.label6.Text = "Radio";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 

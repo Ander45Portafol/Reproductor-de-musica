@@ -128,5 +128,38 @@ namespace Reproductor_de_Musica
             // Re-aplicar bordes redondos al PictureBox
             ApplyRoundedCorners(pictureBox20, 15);
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            FrmArtistas fomr = new FrmArtistas();
+            fomr.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            FrmCanciones fomr = new FrmCanciones();
+            fomr.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            FrmPlaylist fomr = new FrmPlaylist();
+            fomr.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            FrmRadio fomr = new FrmRadio();
+            fomr.Show();
+            this.Hide();
+        }
     }
 }
