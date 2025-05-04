@@ -30,7 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
             this.BtnCSesion = new System.Windows.Forms.Button();
             this.BtnListas = new System.Windows.Forms.Button();
             this.BtnRadio = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@
             this.BtnCanciones = new System.Windows.Forms.Button();
             this.BtnArtista = new System.Windows.Forms.Button();
             this.BtnInicio = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,17 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(225, 798);
             this.panel1.TabIndex = 0;
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Reproductor_de_Musica.Properties.Resources.x_regular_24;
-            this.button6.Location = new System.Drawing.Point(1362, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 23);
-            this.button6.TabIndex = 1;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // BtnCSesion
             // 
@@ -178,6 +167,7 @@
             this.BtnArtista.Text = "Artistas";
             this.BtnArtista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnArtista.UseVisualStyleBackColor = true;
+            this.BtnArtista.Click += new System.EventHandler(this.BtnArtista_Click);
             // 
             // BtnInicio
             // 
@@ -197,18 +187,30 @@
             this.BtnInicio.UseVisualStyleBackColor = true;
             this.BtnInicio.Click += new System.EventHandler(this.BtnInicio_Click);
             // 
+            // button6
+            // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = global::Reproductor_de_Musica.Properties.Resources.x_regular_24;
+            this.button6.Location = new System.Drawing.Point(1362, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 23);
+            this.button6.TabIndex = 1;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // PanelContenido
             // 
             this.PanelContenido.BackColor = System.Drawing.SystemColors.Control;
-            this.PanelContenido.Location = new System.Drawing.Point(223, 51);
+            this.PanelContenido.Location = new System.Drawing.Point(231, 51);
             this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(1183, 744);
+            this.PanelContenido.Size = new System.Drawing.Size(1174, 744);
             this.PanelContenido.TabIndex = 2;
             // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1406, 794);
             this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.button6);

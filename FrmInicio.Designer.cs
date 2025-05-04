@@ -33,12 +33,12 @@
             this.dgvnovedades = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlmusica = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pct2 = new System.Windows.Forms.PictureBox();
             this.pct3 = new System.Windows.Forms.PictureBox();
@@ -79,7 +79,7 @@
             this.dgvnovedades.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvnovedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvnovedades.Location = new System.Drawing.Point(124, 150);
-            this.dgvnovedades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvnovedades.Margin = new System.Windows.Forms.Padding(4);
             this.dgvnovedades.Name = "dgvnovedades";
             this.dgvnovedades.RowHeadersWidth = 51;
             this.dgvnovedades.Size = new System.Drawing.Size(976, 216);
@@ -107,34 +107,10 @@
             this.pnlmusica.Controls.Add(this.label9);
             this.pnlmusica.Controls.Add(this.pictureBox21);
             this.pnlmusica.Location = new System.Drawing.Point(75, 596);
-            this.pnlmusica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlmusica.Margin = new System.Windows.Forms.Padding(4);
             this.pnlmusica.Name = "pnlmusica";
             this.pnlmusica.Size = new System.Drawing.Size(1025, 135);
             this.pnlmusica.TabIndex = 49;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(120, 63);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 19);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Artista - Album";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(119, 37);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(176, 23);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Nombre canción";
             // 
             // pictureBox25
             // 
@@ -179,6 +155,30 @@
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox22.TabIndex = 37;
             this.pictureBox22.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(120, 63);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 19);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Artista - Album";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(119, 37);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 23);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Nombre canción";
             // 
             // pictureBox21
             // 
@@ -266,7 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1183, 744);
+            this.ClientSize = new System.Drawing.Size(1174, 744);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pnlmusica);
             this.Controls.Add(this.pct2);
@@ -279,7 +279,7 @@
             this.Controls.Add(this.dgvnovedades);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInicio";
             this.Text = "FrmInicio";
             this.Load += new System.EventHandler(this.FrmInicio_Load);
