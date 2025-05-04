@@ -22,48 +22,7 @@ namespace Reproductor_de_Musica
         }
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-            // Aplica bordes redondos al formulario
-            RoundedForm.ApplyRoundCorners(this, 30);
 
-            // Aplica bordes redondos al panel del menú (pnlMenu)
-            RoundedForm.ApplyRoundCorners(pnlmenu, 20);
-
-            pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Nuevo color (51, 51, 153)
-            pnlmenu.Padding = new Padding(10); // Margen interno
-
-            // Aplicar bordes redondos al Panel que contiene el TextBox (pnlTextBoxContainer)
-            RoundedForm.ApplyRoundCorners(pnlbuscador, 15); // Radio de 15 píxeles
-
-            // Configurar el Panel que contiene el TextBox
-            // pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Color de fondo del Panel
-            pnlbuscador.Padding = new Padding(5); // Margen interno
-
-            // Configurar el TextBox dentro del Panel
-            txtbuscar.BorderStyle = BorderStyle.None; // Sin borde predeterminado
-            txtbuscar.Dock = DockStyle.Fill; // Ocupar todo el espacio del Panel
-                                             //  txtbuscar.BackColor = Color.White; // Color de fondo del TextBox
-            txtbuscar.ForeColor = Color.Black; // Color del texto
-
-            // Aplicar bordes redondos al DataGridView
-            ApplyRoundedCornersToDataGridView(dgvnovedades, 15); // Radio de 15 píxeles
-
-            // Aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct1, 15); // Radio de 15 píxeles
-
-            // Aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct6, 15); // Radio de 15 píxeles
-
-            // Aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct5, 15); // Radio de 15 píxeles
-
-            // Aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct4, 15); // Radio de 15 píxeles
-
-            // Aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct3, 15); // Radio de 15 píxeles
-
-            // Aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct2, 15); // Radio de 15 píxeles
         }
       
         private void ApplyRoundedCorners(Control control, int cornerRadius)
@@ -96,32 +55,7 @@ namespace Reproductor_de_Musica
 
         private void FrmInicio_Resize(object sender, EventArgs e)
         {
-            // Re-aplica bordes redondos al redimensionar el formulario
-            RoundedForm.ApplyRoundCorners(this, 30);
 
-            // Re-aplica bordes redondos al panel del menú
-            RoundedForm.ApplyRoundCorners(pnlmenu, 20);
-
-            // Re-aplicar bordes redondos al Panel que contiene el TextBox
-            RoundedForm.ApplyRoundCorners(pnlbuscador, 15);
-
-            // Re-aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct1, 15);
-
-            // Re-aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct6, 15);
-
-            // Re-aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct5, 15);
-
-            // Re-aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct4, 15);
-
-            // Re-aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct3, 15);
-
-            // Re-aplicar bordes redondos al PictureBox
-            ApplyRoundedCorners(pct2, 15);
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -162,6 +96,11 @@ namespace Reproductor_de_Musica
             FrmRadio fomr = new FrmRadio();
             fomr.Show();
             this.Hide();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

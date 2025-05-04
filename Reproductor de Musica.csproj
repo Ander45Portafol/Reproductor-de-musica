@@ -58,6 +58,12 @@
     <Compile Include="FrmCanciones.Designer.cs">
       <DependentUpon>FrmCanciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <EmbeddedResource Include="FrmCanciones.resx">
       <DependentUpon>FrmCanciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,6 +125,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bxs-home-alt-2 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone-solid-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bxs-home-alt-2 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone-solid-242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-solid-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radio-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bxs-home-alt-2 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone-solid-243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-solid-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-solid-242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-solid-242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-solid-243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-solid-243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radio-solid-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist-solid-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out-solid-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
