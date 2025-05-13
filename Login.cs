@@ -15,8 +15,6 @@ namespace Reproductor_de_Musica
         public Login()
         {
             InitializeComponent();
-            Login frm = new Login();
-            CargarFormularioEnPanel(frm);
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -28,5 +26,7 @@ namespace Reproductor_de_Musica
         {
 
         }
+
+      
     }
 }
