@@ -27,3 +27,5 @@ C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\R
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.CoreCompileInputs.cache
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor de Musica.exe
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor de Musica.pdb
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmDashboard.resources
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.Login.resources
