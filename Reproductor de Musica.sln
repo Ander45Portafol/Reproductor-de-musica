@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reproductor de Musica", "Reproductor de Musica.csproj", "{09F2CE82-72CC-490C-B342-2D0718E7DFC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios", "Servicios\Servicios.csproj", "{4E6FBE8D-6B35-48B3-A75E-72B71E6F5508}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{09F2CE82-72CC-490C-B342-2D0718E7DFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09F2CE82-72CC-490C-B342-2D0718E7DFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09F2CE82-72CC-490C-B342-2D0718E7DFC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6FBE8D-6B35-48B3-A75E-72B71E6F5508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6FBE8D-6B35-48B3-A75E-72B71E6F5508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6FBE8D-6B35-48B3-A75E-72B71E6F5508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6FBE8D-6B35-48B3-A75E-72B71E6F5508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
