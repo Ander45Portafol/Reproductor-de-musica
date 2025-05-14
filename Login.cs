@@ -27,6 +27,21 @@ namespace Reproductor_de_Musica
 
         }
 
-      
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Servicios.Conexion.DatabaseConnection();
+                MessageBox.Show("Si se realizo la conexion");
+            }
+            catch (Exception ex) {
+                MessageBox.Show("No se pudo hacer la conexion");
+            }
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

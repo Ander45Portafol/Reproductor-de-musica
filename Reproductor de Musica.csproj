@@ -199,5 +199,11 @@
   <ItemGroup>
     <None Include="Resources\log-out-solid-24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Servicios\Servicios.csproj">
+      <Project>{4e6fbe8d-6b35-48b3-a75e-72b71e6f5508}</Project>
+      <Name>Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
