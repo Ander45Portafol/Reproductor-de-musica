@@ -1,4 +1,6 @@
 ﻿using System;
+using Servicios;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +18,6 @@ namespace Reproductor_de_Musica
         {
             InitializeComponent();
             this.Load += Login_Load;
-            this.Resize += Login_Resize;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -25,38 +26,57 @@ namespace Reproductor_de_Musica
             RoundedForm.ApplyRoundCorners(pnllogin, 20);
         }
 
-        private void Login_Resize(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            try
+            string correo = txtcorreo.Text.Trim();
+            string contraseña = txtcontraseña.Text;
+
+            if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(contraseña))
             {
-                Servicios.Conexion.DatabaseConnection();
-                MessageBox.Show("Si se realizo la conexion");
+                MessageBox.Show("Por favor ingrese sus credenciales");
+                return;
             }
-            catch (Exception ex) {
-                MessageBox.Show("No se pudo hacer la conexion");
+
+            if (Autenticacion.Autenticar(correo, contraseña))
+            {
+               
+                MessageBox.Show("¡Bienvenido a Harmoniq!");
+
+                FrmInicio fmrinicio= new FrmInicio();
+                fmrinicio.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas. Intente nuevamente.");
+                txtcontraseña.Clear();
+                txtcontraseña.Focus();
             }
         }
+     
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void txtcontraseña_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void LinkSuscrip_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmSuscripcion fomr = new FrmSuscripcion();
             fomr.Show();
             this.Hide();
+        }
+
+
+        private void btnIniciar_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnIniciar_Click(sender, e);
+            }
         }
     }
 }
