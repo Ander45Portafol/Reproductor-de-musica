@@ -43,6 +43,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.BtnCerrar = new System.Windows.Forms.Button();
             this.pnlsuscrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -187,12 +188,24 @@
             this.label7.TabIndex = 78;
             this.label7.Text = "Género";
             // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrar.Image = global::Reproductor_de_Musica.Properties.Resources.x_regular_24;
+            this.BtnCerrar.Location = new System.Drawing.Point(600, 11);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(24, 19);
+            this.BtnCerrar.TabIndex = 79;
+            this.BtnCerrar.UseVisualStyleBackColor = true;
+            // 
             // FrmSuscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(622, 450);
+            this.ClientSize = new System.Drawing.Size(635, 450);
+            this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
@@ -233,5 +246,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button BtnCerrar;
     }
 }
