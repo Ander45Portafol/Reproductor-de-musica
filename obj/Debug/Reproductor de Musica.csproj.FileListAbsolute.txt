@@ -33,3 +33,7 @@ C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\R
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\bin\Debug\Servicios.dll
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\bin\Debug\Servicios.pdb
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Servicios.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Servicios.pdb
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmSuscripcion.resources
