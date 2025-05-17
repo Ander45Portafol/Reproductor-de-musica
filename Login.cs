@@ -31,6 +31,7 @@ namespace Reproductor_de_Musica
         {
             try
             {
+                //xd
                 Servicios.Conexion.DatabaseConnection();
                 MessageBox.Show("Si se realizo la conexion");
             }

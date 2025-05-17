@@ -33,3 +33,22 @@ C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\R
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\bin\Debug\Servicios.dll
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\bin\Debug\Servicios.pdb
 C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\bin\Debug\Reproductor de Musica.exe.config
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\bin\Debug\Reproductor de Musica.exe
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\bin\Debug\Reproductor de Musica.pdb
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\bin\Debug\Servicios.dll
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\bin\Debug\Servicios.pdb
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.AssemblyReference.cache
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmArtistas.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmCanciones.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmDashboard.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmInicio.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmPlaylist.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmRadio.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.Login.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.Properties.Resources.resources
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.GenerateResource.cache
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.CoreCompileInputs.cache
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.CopyComplete
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor de Musica.exe
+C:\Users\aleda\OneDrive\Documentos\4. PED104\Reproductor-de-musica\obj\Debug\Reproductor de Musica.pdb
