@@ -15,11 +15,14 @@ namespace Reproductor_de_Musica
         public Login()
         {
             InitializeComponent();
+            this.Load += Login_Load;
+            this.Resize += Login_Resize;
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            RoundedForm.ApplyRoundCorners(this, 20);
+            RoundedForm.ApplyRoundCorners(pnllogin, 20);
         }
 
         private void Login_Resize(object sender, EventArgs e)
@@ -42,6 +45,18 @@ namespace Reproductor_de_Musica
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtcontraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LinkSuscrip_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmSuscripcion fomr = new FrmSuscripcion();
+            fomr.Show();
+            this.Hide();
         }
     }
 }
