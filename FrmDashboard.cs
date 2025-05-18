@@ -60,5 +60,11 @@ namespace Reproductor_de_Musica
             FrmArtistas frmArtista = new FrmArtistas();
             CargarFormularioEnPanel(frmArtista);
         }
+
+        private void BtnListas_Click(object sender, EventArgs e)
+        {
+            FrmPlaylist frmPlaylist = new FrmPlaylist();
+            CargarFormularioEnPanel(frmPlaylist);
+        }
     }
 }
