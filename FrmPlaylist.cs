@@ -165,6 +165,32 @@ namespace Reproductor_de_Musica
             fomr.Show();
             this.Hide();
         }
+
+        private void CargarFormularioEnPanel(Form formulario)
+        {
+            // Limpiar el panel antes de cargar un nuevo formulario
+            this.Controls.Clear();
+
+            // Establecer la propiedad TopLevel a false
+            formulario.TopLevel = false;
+
+            // Establecer la propiedad FormBorderStyle a None si no quieres bordes
+            formulario.FormBorderStyle = FormBorderStyle.None;
+
+            // Agregar el formulario al panel
+            this.Controls.Add(formulario);
+
+            // Establecer el tamaño del formulario al tamaño del panel
+            formulario.Dock = DockStyle.Fill;
+
+            // Mostrar el formulario
+            formulario.Show();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmPlaylistBuscar frmPlaylistBuscar = new FrmPlaylistBuscar();
+            CargarFormularioEnPanel(frmPlaylistBuscar);
+        }
     }
     
 } 

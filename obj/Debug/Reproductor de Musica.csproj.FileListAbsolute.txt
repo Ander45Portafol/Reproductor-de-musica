@@ -57,3 +57,5 @@ C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.exe
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.pdb
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmPlaylistBuscar.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmBuscarCancion.resources
