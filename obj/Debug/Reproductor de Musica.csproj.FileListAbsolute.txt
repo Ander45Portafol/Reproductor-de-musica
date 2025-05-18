@@ -37,3 +37,8 @@ C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Servicios.dll
 C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Servicios.pdb
 C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
 C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmSuscripcion.resources
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Interop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Interop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.ResolveComReference.cache

@@ -43,7 +43,7 @@ namespace Reproductor_de_Musica
                
                 MessageBox.Show("¡Bienvenido a Harmoniq!");
 
-                FrmInicio fmrinicio= new FrmInicio();
+                FrmDashboard fmrinicio = new FrmDashboard();
                 fmrinicio.Show();
                 this.Hide();
             }
