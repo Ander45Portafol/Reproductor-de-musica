@@ -37,3 +37,25 @@ C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Servicios.dll
 C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Servicios.pdb
 C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
 C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmSuscripcion.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\Reproductor de Musica.exe.config
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\Reproductor de Musica.exe
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\Reproductor de Musica.pdb
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\Servicios.dll
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\Servicios.pdb
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.csproj.AssemblyReference.cache
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmArtistas.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmCanciones.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmDashboard.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmInicio.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmPlaylist.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmRadio.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmSuscripcion.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.Login.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.Properties.Resources.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.csproj.GenerateResource.cache
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.csproj.CoreCompileInputs.cache
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.exe
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.pdb
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmPlaylistBuscar.resources
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmBuscarCancion.resources
