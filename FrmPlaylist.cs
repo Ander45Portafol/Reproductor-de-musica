@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -66,6 +68,8 @@ namespace Reproductor_de_Musica
 
             // Aplicar bordes redondos al PictureBox
             ApplyRoundedCorners(pictureBox20, 15); // Radio de 15 píxeles
+
+
         }
 
         private void ApplyRoundedCorners(Control control, int cornerRadius)
@@ -124,6 +128,7 @@ namespace Reproductor_de_Musica
 
             // Re-aplicar bordes redondos al PictureBox
             ApplyRoundedCorners(pictureBox20, 15);
+            CargarPlaylist();
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -165,8 +170,58 @@ namespace Reproductor_de_Musica
             fomr.Show();
             this.Hide();
         }
+        private void CargarPlaylist()
+        {
+            using(SqlConnection conn = Conexion.DatabaseConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT id_lista, nombre_lista FROM Lista";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    int x = 100;
+                    int y = 20; // Para posicionar los botones
+                    
+                    while (reader.Read())
+                    {
+                        int id_lista = reader.GetInt32(0);//0 es la primero columna(id_lista)
+                        string nombre = reader.GetString(1);//1 es la segunda columna(nombre_lista)
+
+                        Button btn = new Button();
+                        btn.Text = nombre;
+                        btn.Tag = id_lista; //almacenando el id en el boton
+                        btn.Width = 200;
+                        btn.Height = 40;
+                        btn.Left = 20;
+                        btn.Left = x;
+                        btn.Top = y;
+                        
+                        y += 50;
+
+                        btn.Click += Btn_Click;
+
+                        this.Controls.Add(btn);
+                    }
+                }
+                catch 
+                {
+                    MessageBox.Show("Error al cargar playlists");
+                }
+            }
+        }
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int idPlaylist = (int)btn.Tag;
+
+            DetallePlaylist detalle = new DetallePlaylist(idPlaylist);
+            detalle.Show();
+            this.Visible = false;
+        }
     }
-    
 } 
 
 
