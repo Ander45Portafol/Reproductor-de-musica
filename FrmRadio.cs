@@ -144,7 +144,7 @@ namespace Reproductor_de_Musica
 
         private void label4_Click(object sender, EventArgs e)
         {
-            FrmRadio fomr = new FrmRadio();
+            FrmCanciones fomr = new FrmCanciones();
             fomr.Show();
             this.Hide();
         }
