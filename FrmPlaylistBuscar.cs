@@ -14,6 +14,7 @@ namespace Reproductor_de_Musica
 {
     public partial class FrmPlaylistBuscar: Form
     {
+        private int id;
         public FrmPlaylistBuscar(string nombre_playlist)
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace Reproductor_de_Musica
 
                         if (result != null && result != DBNull.Value)
                         {
+                            id= Convert.ToInt32(result);
                             CargarCanciones( Convert.ToInt32(result));
                         }
                         else {
@@ -104,7 +106,7 @@ namespace Reproductor_de_Musica
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            FrmBuscarCancion frmBuscarCancion = new FrmBuscarCancion();
+            FrmBuscarCancion frmBuscarCancion = new FrmBuscarCancion(id);
             frmBuscarCancion.ShowDialog();
         }
     }
