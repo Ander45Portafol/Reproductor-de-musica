@@ -15,9 +15,11 @@ namespace Servicios
             string DB = "Harmoniq";
             string user = "sa";
             string password = "123";
-            string connectionString = "Server=localhost;Database=" + DB + ";User=" + user + ";Password=" + password + ";";
-            SqlConnection _connection = new SqlConnection(connectionString);
-            return _connection;
+            string connectionString = "Server=DESKTOP-RA97V0D\\MSSQLSERVER01;Database=" + DB + ";User=" + user + ";Password=" + password + ";";
+            //  SqlConnection _connection = new SqlConnection(connectionString);
+            //  return _connection;
+
+            return new SqlConnection(connectionString);
         }
     }
 }

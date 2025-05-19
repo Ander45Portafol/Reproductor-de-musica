@@ -24,5 +24,10 @@ namespace Reproductor_de_Musica
             RoundedForm.ApplyRoundCorners(this, 20);
             RoundedForm.ApplyRoundCorners(pnlsuscrip, 20);
         }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
