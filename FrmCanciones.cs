@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -22,6 +24,7 @@ namespace Reproductor_de_Musica
 
         private void FrmCanciones_Load(object sender, EventArgs e)
         {
+            CargarCancionesEnLabels();
 
             // Aplica bordes redondos al formulario
             RoundedForm.ApplyRoundCorners(this, 30);
@@ -49,11 +52,12 @@ namespace Reproductor_de_Musica
             ApplyRoundedCornersToDataGridView(dataGridView1, 15); // Radio de 15 píxeles
 
             // Aplicar bordes redondos al DataGridView2
-            ApplyRoundedCornersToDataGridView(dataGridView2, 15); // Radio de 15 píxeles
+            //ApplyRoundedCornersToDataGridView(dataGridView2, 15); // Radio de 15 píxeles
 
             // Aplicar bordes redondos al PictureBox
             ApplyRoundedCorners(pictureBox15, 15); // Radio de 15 píxeles
 
+            ApplyRoundedCorners(lstSugerenciasCanciones, 15);
             // Aplicar bordes redondos al PictureBox
             ApplyRoundedCorners(pictureBox16, 15); // Radio de 15 píxeles
 
@@ -164,5 +168,302 @@ namespace Reproductor_de_Musica
             fomr.Show();
             this.Hide();
         }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = txtbuscar.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(textoBusqueda))
+            {
+                lstSugerenciasCanciones.Visible = false;
+                lstSugerenciasCanciones.DataSource = null; 
+                return;
+            }
+
+            
+            if (textoBusqueda.Equals("Buscar...", StringComparison.OrdinalIgnoreCase))
+            {
+                 lstSugerenciasCanciones.Visible = false;
+                 return;
+            }
+
+            BuscarCanciones(textoBusqueda);
+        }
+
+        private void BuscarCanciones(string textoBusqueda)
+        {
+            List<string> nombresCanciones = new List<string>();
+
+            
+            string query = "SELECT nombre_cancion FROM Canciones WHERE nombre_cancion LIKE @TextoBusqueda + '%' ORDER BY nombre_cancion;";
+
+            try
+            {
+                using (SqlConnection connection = Conexion.DatabaseConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        
+                        command.Parameters.AddWithValue("@TextoBusqueda", textoBusqueda);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                nombresCanciones.Add(reader["nombre_cancion"].ToString());
+                            }
+                        }
+                    }
+                }
+
+                if (nombresCanciones.Count > 0)
+                {
+                    lstSugerenciasCanciones.DataSource = nombresCanciones;
+                    lstSugerenciasCanciones.Visible = true;
+                    lstSugerenciasCanciones.BringToFront(); 
+                }
+                else
+                {
+                    lstSugerenciasCanciones.Visible = false;
+                    lstSugerenciasCanciones.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar canciones: " + ex.Message, "Error de Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lstSugerenciasCanciones.Visible = false;
+            }
+        }
+
+        private void lstSugerenciasCanciones_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (lstSugerenciasCanciones.SelectedItem != null)
+            {
+                txtbuscar.Text = lstSugerenciasCanciones.SelectedItem.ToString();
+                lstSugerenciasCanciones.Visible = false;
+                txtbuscar.Focus(); 
+                txtbuscar.Select(txtbuscar.TextLength, 0); 
+            }
+        }
+
+        private void txtbuscar_Leave(object sender, EventArgs e)
+        {
+            if (!lstSugerenciasCanciones.Focused)
+            {
+                lstSugerenciasCanciones.Visible = false; 
+            }
+        }
+
+        private void txtbuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lstSugerenciasCanciones.Visible && lstSugerenciasCanciones.Items.Count > 0)
+                {
+                    
+                    if (lstSugerenciasCanciones.SelectedIndex == -1) // Si no hay nada seleccionado por teclado (arriba/abajo)
+                    {
+                        lstSugerenciasCanciones.SelectedIndex = 0; // Selecciona la primera
+                    }
+                    txtbuscar.Text = lstSugerenciasCanciones.SelectedItem.ToString();
+                    lstSugerenciasCanciones.Visible = false;
+                    txtbuscar.Select(txtbuscar.TextLength, 0); // Pone el cursor al final
+                    e.SuppressKeyPress = true; // Evita otras acciones del enter
+                }
+            }
+            else if (e.KeyCode == Keys.Down && lstSugerenciasCanciones.Visible && lstSugerenciasCanciones.Items.Count > 0)
+            {
+                // Mover selección hacia abajo en el ListBox
+                lstSugerenciasCanciones.Focus();
+                if (lstSugerenciasCanciones.SelectedIndex < lstSugerenciasCanciones.Items.Count - 1)
+                {
+                    lstSugerenciasCanciones.SelectedIndex++;
+                }
+                e.Handled = true; // Indica que la tecla fue manejada
+            }
+            else if (e.KeyCode == Keys.Up && lstSugerenciasCanciones.Visible && lstSugerenciasCanciones.Items.Count > 0)
+            {
+                // Mover selección hacia arriba en el ListBox
+                lstSugerenciasCanciones.Focus();
+                if (lstSugerenciasCanciones.SelectedIndex > 0)
+                {
+                    lstSugerenciasCanciones.SelectedIndex--;
+                }
+                e.Handled = true; // Indica que la tecla fue manejada
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                lstSugerenciasCanciones.Visible = false;
+                e.Handled = true;
+            }
+        }
+
+        private void lstSugerenciasCanciones_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lstSugerenciasCanciones.SelectedItem != null)
+                {
+                    // Poner el texto del ítem seleccionado en el TextBox
+                    txtbuscar.Text = lstSugerenciasCanciones.SelectedItem.ToString();
+                    // Ocultar la lista de sugerencias
+                    lstSugerenciasCanciones.Visible = false;
+                    // Devolver el foco al TextBox (muy importante)
+                    txtbuscar.Focus();
+                    // Colocar el cursor al final del texto en el TextBox
+                    txtbuscar.Select(txtbuscar.TextLength, 0);
+
+                    // Indicar que la tecla fue manejada para evitar procesamiento adicional
+                    e.Handled = true;
+                    e.SuppressKeyPress = true; // Suprime el sonido "ding" y el evento KeyPress
+                }
+            }
+            else if (e.KeyCode == Keys.Escape) // Opcional: Manejar Escape también desde el ListBox
+            {
+                lstSugerenciasCanciones.Visible = false;
+                txtbuscar.Focus(); // Devolver el foco al TextBox
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            string nombreCancionABuscar = txtbuscar.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nombreCancionABuscar))
+            {
+                MessageBox.Show("Por favor, ingrese o seleccione un nombre de canción para buscar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarLabelsDeDetalles();
+                return;
+            }
+
+            CargarDetallesCancion(nombreCancionABuscar);
+        }
+        private void CargarDetallesCancion(string nombreCancion)
+        {
+            string query = @"
+        SELECT 
+            c.nombre_cancion, 
+            c.tiempo_cancion,
+            alb.nombre_album,
+            art.nombre_artista,
+            art.nacionalidad,
+            art.id_artista
+        FROM 
+            Canciones c
+        INNER JOIN 
+            Album alb ON c.id_album = alb.id_album
+        INNER JOIN 
+            Artistas art ON alb.id_artista = art.id_artista
+        WHERE 
+            c.nombre_cancion = @NombreCancionParam;";
+
+            try
+            {
+                using (SqlConnection connection = Conexion.DatabaseConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@NombreCancionParam", nombreCancion);
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read()) // Si se encontró la canción
+                            {
+                                // Asigna los valores a tus Labels
+                                
+                                lblCancionNombre.Text = reader["nombre_cancion"].ToString();
+                                lblNomArt.Text = reader["nombre_artista"].ToString();
+                                lblAlbum.Text = reader["nombre_album"].ToString();
+                                lblNacionalildad.Text = reader["nacionalidad"].ToString();
+                                lblTime.Text = reader["tiempo_cancion"].ToString();
+                                lblTopArt.Text = reader["id_artista"].ToString();
+                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontraron detalles para la canción: " + nombreCancion, "No Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LimpiarLabelsDeDetalles();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar detalles de la canción: " + ex.Message, "Error de Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LimpiarLabelsDeDetalles();
+            }
+        }
+
+        private void LimpiarLabelsDeDetalles()
+        {
+           
+            lblCancionNombre.Text = "------------"; 
+            lblNomArt.Text = "------------";
+            lblAlbum.Text = "------------";
+            lblNacionalildad.Text = "------------";
+            lblTime.Text = "------------";
+        }
+
+        private List<string> ObtenerSeisCancionesAleatorias()
+        {
+            List<string> nombresCanciones = new List<string>();
+            
+
+            string query = @"
+            SELECT TOP 6 nombre_cancion 
+            FROM Canciones 
+            ORDER BY NEWID();";
+
+            try
+            {
+                using (SqlConnection connection = Conexion.DatabaseConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                nombresCanciones.Add(reader["nombre_cancion"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener canciones aleatorias: " + ex.Message, "Error de Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return nombresCanciones;
+        }
+
+        private void CargarCancionesEnLabels()
+        {
+            List<string> cancionesAleatorias = ObtenerSeisCancionesAleatorias();
+
+            Label[] labelsCanciones = new Label[]
+            {
+                lblTrend1, lblTrend2, lblTrend3,
+                lblTrend4, lblTrend5, lblTrend6
+            };
+
+            
+            foreach (Label lbl in labelsCanciones)
+            {
+                lbl.Text = "------------"; 
+            }
+
+            for (int i = 0; i < cancionesAleatorias.Count && i < labelsCanciones.Length; i++)
+            {
+                labelsCanciones[i].Text = cancionesAleatorias[i];
+            }
+        }
+
     }
 }
