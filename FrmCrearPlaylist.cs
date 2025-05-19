@@ -30,7 +30,7 @@ namespace Reproductor_de_Musica
             {
                 using (SqlConnection connection = Conexion.DatabaseConnection())
                 {
-                    string query = "INSERT INTO Lista(id_lista,id_usuario,nombre_lista,fecha_creacion)VALUES (4,@Usuario,@NombreLista,@Fecha)";
+                    string query = "INSERT INTO Lista(id_usuario,nombre_lista,fecha_creacion)VALUES (@Usuario,@NombreLista,@Fecha)";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {

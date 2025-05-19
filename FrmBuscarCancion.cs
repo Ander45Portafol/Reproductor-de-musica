@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,14 @@ namespace Reproductor_de_Musica
     public partial class FrmBuscarCancion: Form
     {
         private int id_lista;
+        public delegate void DatoAgregadoEventHandler(object sender, EventArgs e); // Puedes crear una clase EventArgs personalizada para pasar datos
+
+        // 2. Declarar el evento usando el delegado.
+        public event DatoAgregadoEventHandler DatoAgregado;
         public FrmBuscarCancion(int lista)
         {
             InitializeComponent();
+            this.id_lista = lista;
         }
 
 
@@ -68,22 +74,68 @@ namespace Reproductor_de_Musica
                 int idCancion = Convert.ToInt32(DgvNuevas.Rows[e.RowIndex].Cells["id_cancion"].Value);
                 int idPlaylist = id_lista;
 
-                using (SqlConnection conn = Conexion.DatabaseConnection())
+                try
                 {
-                    try
+                    if (verificarExiste(idPlaylist, idCancion))
                     {
-                        conn.Open();
+                        using (SqlConnection connection = Conexion.DatabaseConnection())
+                        {
 
-                        string insertQuery = "INSERT INTO PlaylistCanciones (id_playlist, id_cancion) VALUES (" + idPlaylist + "," + idCancion + ")";
-                        SqlCommand cmd = new SqlCommand(insertQuery, conn);
-                        cmd.ExecuteNonQuery();
+                            string query = "INSERT INTO Lista_canciones(id_lista,id_cancion,fecha_agregado) VALUES (@lista, @cancion,@Fecha)";
 
-                        MessageBox.Show("Canción agregada a la playlist correctamente 🎵");
+                            using (SqlCommand cmd = new SqlCommand(query, connection))
+                            {
+                                cmd.Parameters.AddWithValue("@lista", id_lista);
+                                cmd.Parameters.AddWithValue("@cancion", idCancion);
+                                cmd.Parameters.AddWithValue("@Fecha", DateTime.Today.ToString("yyyy-MM-dd"));
+                                connection.Open();
+                                int result = cmd.ExecuteNonQuery();
+
+                                if (result > 0)
+                                {
+
+                                    OnDatoAgregado(EventArgs.Empty);
+                                    MessageBox.Show("Canción agregada con éxito ♫");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Hubo problemas para agregar la canción.");
+                                }
+                            }
+                        }
                     }
-                    catch
-                    {
-                        MessageBox.Show("Error al agregar la canción");
-                    }
+                    else
+                        MessageBox.Show("la cacnión ya éxiste en tu playlist.");
+                }
+                catch (SqlException sqlEx)
+                {
+                    MessageBox.Show($"Error de SQL: {sqlEx.Message}\nNúmero: {sqlEx.Number}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error general: {ex.Message}");
+                }
+            }
+        }
+
+        protected virtual void OnDatoAgregado(EventArgs e)
+        {
+            DatoAgregado?.Invoke(this, e);
+        }
+        private bool verificarExiste(int idPlaylist, int idCancion)
+        {
+            using (SqlConnection connection = Conexion.DatabaseConnection())
+            {
+                string query = "SELECT COUNT(*) FROM Lista_canciones WHERE id_lista = @idLista AND id_cancion = @idCancion";
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@idLista", idPlaylist);
+                    cmd.Parameters.AddWithValue("@idCancion", idCancion);
+                    connection.Open();
+
+                    int count = (int)cmd.ExecuteScalar(); // Devuelve el número de coincidencias
+
+                    return count == 0; // true si no existe aún
                 }
             }
         }

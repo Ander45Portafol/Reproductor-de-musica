@@ -13,9 +13,9 @@ namespace Servicios
         public static SqlConnection DatabaseConnection()
         {
             string DB = "Harmoniq";
-            string user = "sa";
+            string user = "ALEJANDROSURIA\aleda";
             string password = "123";
-            string connectionString = "Server=DESKTOP-RA97V0D\\MSSQLSERVER01;Database=" + DB + ";User=" + user + ";Password=" + password + ";";
+            string connectionString = "Server=ALEJANDROSURIA; Database=" + DB + ";Integrated Security = true;";
             //  SqlConnection _connection = new SqlConnection(connectionString);
             //  return _connection;
 

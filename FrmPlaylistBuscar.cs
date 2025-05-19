@@ -15,6 +15,7 @@ namespace Reproductor_de_Musica
     public partial class FrmPlaylistBuscar: Form
     {
         private int id;
+        
         public FrmPlaylistBuscar(string nombre_playlist)
         {
             InitializeComponent();
@@ -107,7 +108,13 @@ namespace Reproductor_de_Musica
         private void button4_Click(object sender, EventArgs e)
         {
             FrmBuscarCancion frmBuscarCancion = new FrmBuscarCancion(id);
+            frmBuscarCancion.DatoAgregado += FormAgregar_DatoAgregado;
             frmBuscarCancion.ShowDialog();
+        }
+        private void FormAgregar_DatoAgregado(object sender, EventArgs e)
+        {
+            // Aquí es donde actualizas tu FormPrincipal
+            CargarLista(LblNombre.Text); // Vuelve a cargar los datos en tu DataGridView o ListBox
         }
     }
 }
