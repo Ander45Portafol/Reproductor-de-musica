@@ -40,12 +40,18 @@ namespace Reproductor_de_Musica
 
             if (Autenticacion.Autenticar(correo, contraseña))
             {
-               
-                MessageBox.Show("¡Bienvenido a Harmoniq!");
+                try
+                {
+                    int id_usuario = Autenticacion.Validar_usuario(correo, contraseña);
+                    MessageBox.Show("¡Bienvenido a Harmoniq!");
 
-                FrmInicio fmrinicio= new FrmInicio();
-                fmrinicio.Show();
-                this.Hide();
+                    FrmDashboard frmDashboard = new FrmDashboard(id_usuario);
+                    frmDashboard.Show();
+                    this.Hide();
+                }
+                catch (Exception) {
+                    MessageBox.Show("No se puedo capturar datos");
+                }
             }
             else
             {

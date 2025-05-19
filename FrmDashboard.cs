@@ -12,11 +12,14 @@ namespace Reproductor_de_Musica
 {
     public partial class FrmDashboard : Form
     {
-        public FrmDashboard()
+        private int usuario;
+
+        public FrmDashboard(int id_usuario)
         {
             InitializeComponent();
             FrmInicio frm = new FrmInicio();
             CargarFormularioEnPanel(frm);
+            usuario = id_usuario;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -51,8 +54,7 @@ namespace Reproductor_de_Musica
 
         private void BtnInicio_Click(object sender, EventArgs e)
         {
-            FrmInicio frmInicio = new FrmInicio();
-            CargarFormularioEnPanel(frmInicio);
+
         }
 
         private void BtnArtista_Click(object sender, EventArgs e)
@@ -63,8 +65,15 @@ namespace Reproductor_de_Musica
 
         private void BtnListas_Click(object sender, EventArgs e)
         {
-            FrmPlaylist frmPlaylist = new FrmPlaylist();
-            CargarFormularioEnPanel(frmPlaylist);
+            FrmPlaylist frmpla = new FrmPlaylist(usuario);
+            CargarFormularioEnPanel(frmpla);
+        }
+
+        private void BtnCSesion_Click(object sender, EventArgs e)
+        {
+            Login frmLogin = new Login();
+            this.Hide();
+            frmLogin.Show();
         }
     }
 }

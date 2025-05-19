@@ -132,9 +132,7 @@ namespace Reproductor_de_Musica
 
         private void label2_Click(object sender, EventArgs e)
         {
-            FrmInicio fomr = new FrmInicio();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -153,9 +151,7 @@ namespace Reproductor_de_Musica
 
         private void label5_Click(object sender, EventArgs e)
         {
-            FrmPlaylist fomr = new FrmPlaylist();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label6_Click(object sender, EventArgs e)
