@@ -121,8 +121,8 @@
   <data name="radio-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\radio-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="music-solid-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\music-solid-242.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="playlist-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playlist-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="music-solid-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\music-solid-243.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,9 +148,6 @@
   <data name="music-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\music-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="radio-solid-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\radio-solid-241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bxs-home-alt-2 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bxs-home-alt-2 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,8 +163,14 @@
   <data name="microphone-solid-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microphone-solid-241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playlist-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\playlist-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="music-solid-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\music-solid-242.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log-out-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-out-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="radio-solid-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\radio-solid-241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microphone-solid-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microphone-solid-243.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,7 @@
   <data name="folder-solid-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-solid-242.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="log-out-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log-out-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Screenshot 2025-05-19 113551" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2025-05-19 113551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
