@@ -59,3 +59,7 @@ C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.pdb
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmPlaylistBuscar.resources
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmBuscarCancion.resources
+C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmBuscarCancion.resources
+C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmSuscripcion.resources
+C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmPlaylistBuscar.resources
+C:\Users\ander\Documentos\Proyectos-Ciclo3\PED\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmCrearPlaylist.resources

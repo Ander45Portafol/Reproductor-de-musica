@@ -167,9 +167,7 @@ namespace Reproductor_de_Musica
 
         private void label5_Click(object sender, EventArgs e)
         {
-            FrmPlaylist fomr = new FrmPlaylist();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label6_Click(object sender, EventArgs e)
