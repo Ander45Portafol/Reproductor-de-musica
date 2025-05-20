@@ -59,3 +59,10 @@ C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.pdb
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmPlaylistBuscar.resources
 C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmBuscarCancion.resources
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\Interop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Interop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor de Musica.csproj.ResolveComReference.cache
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmBuscarCancion.resources
+C:\Users\sanch\Source\Repos\Reproductor-de-musica\obj\Debug\Reproductor_de_Musica.FrmPlaylistBuscar.resources
