@@ -10,12 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Servicios;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Reproductor_de_Musica
 {
     public partial class FrmPlaylist : Form
     {
         private int id_user;
+        private Queue<DataRow> colaPlaylists = new Queue<DataRow>();
+        private DataTable datosOriginales;
         public FrmPlaylist(int usuario)
         {
             InitializeComponent();
@@ -23,11 +26,12 @@ namespace Reproductor_de_Musica
             this.Resize += FrmPlaylist_Resize;
             CargarListas(usuario);
             id_user = usuario;
+            ConfigurarComboBoxFiltro();
         }
 
         private void FrmPlaylist_Load(object sender, EventArgs e)
         {
-           
+
             // Aplica bordes redondos al formulario
             RoundedForm.ApplyRoundCorners(this, 30);
 
@@ -41,13 +45,13 @@ namespace Reproductor_de_Musica
             //RoundedForm.ApplyRoundCorners(pnlTextBoxContainer, 15); // Radio de 15 píxeles
 
             // Configurar el Panel que contiene el TextBox
-           // pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Color de fondo del Panel
+            // pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Color de fondo del Panel
             //pnlTextBoxContainer.Padding = new Padding(5); // Margen interno
 
             // Configurar el TextBox dentro del Panel
-           // txtbuscar.BorderStyle = BorderStyle.None; // Sin borde predeterminado
-           // txtbuscar.Dock = DockStyle.Fill; // Ocupar todo el espacio del Panel
-          //  txtbuscar.BackColor = Color.White; // Color de fondo del TextBox
+            // txtbuscar.BorderStyle = BorderStyle.None; // Sin borde predeterminado
+            // txtbuscar.Dock = DockStyle.Fill; // Ocupar todo el espacio del Panel
+            //  txtbuscar.BackColor = Color.White; // Color de fondo del TextBox
             //txtbuscar.ForeColor = Color.Black; // Color del texto
 
             // Aplicar bordes redondos al DataGridView
@@ -99,7 +103,7 @@ namespace Reproductor_de_Musica
             // Asignar la región al DataGridView
             dgv.Region = new Region(path);
         }
-        
+
         private void FrmPlaylist_Resize(object sender, EventArgs e)
         {
             // Re-aplica bordes redondos al redimensionar el formulario
@@ -146,17 +150,17 @@ namespace Reproductor_de_Musica
                 try
                 {
                     conn.Open();
-                    string query = "SELECT a.nombre_lista,a.fecha_creacion,b.nombre_usuario FROM Lista a, Usuario b WHERE a.id_usuario=b.id_usuario AND a.id_usuario= "+id;
+                    string query = "SELECT a.nombre_lista, a.fecha_creacion, b.nombre_usuario FROM Lista a, Usuario b WHERE a.id_usuario=b.id_usuario AND a.id_usuario= " + id;
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(query, conn);
+                    datosOriginales = new DataTable();
+                    adaptador.Fill(datosOriginales);
 
-                    DataTable tabla = new DataTable();
-                    adaptador.Fill(tabla);
-                    DgvPlaylist.DataSource = tabla;
-                    DgvPlaylist.Columns["nombre_lista"].HeaderText = "Playlist";
-                    DgvPlaylist.Columns["nombre_usuario"].HeaderText = "Usuario";
-                    DgvPlaylist.Columns["fecha_creacion"].HeaderText = "Fecha creada";
+                    // Llenar la cola inicialmente
+                    ActualizarColaPlaylists();
 
+                    // Configurar ComboBox de filtros
+                    ConfigurarComboBoxFiltro();
                 }
                 catch
                 {
@@ -234,13 +238,104 @@ namespace Reproductor_de_Musica
                 string dato = filaSeleccionada.Cells[0].Value?.ToString();
                 //Abrimos el formulario pero usando el nuevo constructor para especificar que
                 //se actualizaran los datos
-                FrmPlaylistBuscar frmBuscarPlaylist= new FrmPlaylistBuscar(dato);
+                FrmPlaylistBuscar frmBuscarPlaylist = new FrmPlaylistBuscar(dato);
                 CargarFormularioEnPanel(frmBuscarPlaylist);
             }
         }
-        
+
+        private void ConfigurarComboBoxFiltro()
+        {
+            // Limpiar items existentes primero
+            comboBoxFiltro.Items.Clear();
+
+            // Agregar items únicos
+            if (comboBoxFiltro.Items.Count == 0)
+            {
+                comboBoxFiltro.Items.AddRange(new object[]
+                {
+                     "Todos",
+                     "Por nombre (A-Z)",
+                     "Por nombre (Z-A)",
+                     "Más recientes primero",
+                     "Más antiguas primero"
+                });
+            }
+
+            comboBoxFiltro.SelectedIndex = 0;
+        }
+
+        private void ActualizarColaPlaylists()
+        {
+            colaPlaylists.Clear();
+
+            // Obtener vista filtrada/ordenada según selección del ComboBox
+            DataView vistaFiltrada = datosOriginales.DefaultView;
+
+            switch (comboBoxFiltro.SelectedItem?.ToString())
+            {
+                case "Por nombre (A-Z)":
+                    vistaFiltrada.Sort = "nombre_lista ASC";
+                    break;
+
+                case "Por nombre (Z-A)":
+                    vistaFiltrada.Sort = "nombre_lista DESC";
+                    break;
+
+                case "Más recientes primero":
+                    vistaFiltrada.Sort = "fecha_creacion DESC";
+                    break;
+
+                case "Más antiguas primero":
+                    vistaFiltrada.Sort = "fecha_creacion ASC";
+                    break;
+
+                default:
+                    vistaFiltrada.Sort = "nombre_lista ASC";
+                    break;
+            }
+
+            // Llenar la cola con los datos ordenados
+            foreach (DataRowView row in vistaFiltrada)
+            {
+                colaPlaylists.Enqueue(row.Row);
+            }
+
+            MostrarDatosEnDataGridView();
+        }
+
+        private void MostrarDatosEnDataGridView()
+        {
+            try
+            {
+                // Convertir la cola a un DataTable para mostrarla en el DataGridView
+                DataTable dt = new DataTable();
+                dt.Columns.Add("nombre_lista");
+                dt.Columns.Add("fecha_creacion");
+                dt.Columns.Add("nombre_usuario");
+
+                foreach (DataRow row in colaPlaylists)
+                {
+                    dt.Rows.Add(row["nombre_lista"], row["fecha_creacion"], row["nombre_usuario"]);
+                }
+
+                DgvPlaylist.DataSource = dt;
+
+                // Configurar las columnas - usando los nombres exactos
+                DgvPlaylist.Columns["nombre_lista"].HeaderText = "Playlist";
+                DgvPlaylist.Columns["nombre_usuario"].HeaderText = "Usuario";
+                DgvPlaylist.Columns["fecha_creacion"].HeaderText = "Fecha creada";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al mostrar datos: {ex.Message}");
+            }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ActualizarColaPlaylists();
+        }
     }
-    
-} 
+}
 
 

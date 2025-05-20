@@ -22,7 +22,7 @@ namespace Reproductor_de_Musica
         public FrmCrearPlaylist(int id_usuario)
         {
             InitializeComponent();
-            usuario=id_usuario;
+            usuario = id_usuario;
         }
         private bool CrearPlaylist()
         {
@@ -36,7 +36,7 @@ namespace Reproductor_de_Musica
                     {
                         cmd.Parameters.AddWithValue("@Usuario", usuario);
                         cmd.Parameters.AddWithValue("@NombreLista", TxtNombre_Lista.Text);
-                        cmd.Parameters.AddWithValue("@Fecha", DateTime.Today.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = DateTime.Now;
                         connection.Open();
                         int result = cmd.ExecuteNonQuery();
 

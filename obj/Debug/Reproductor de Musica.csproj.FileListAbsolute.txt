@@ -147,3 +147,9 @@ C:\Users\ander\Documentos\Proyectos-Ciclo3\Reproductor-de-musica\obj\Debug\Repro
 C:\Users\ander\Documentos\Proyectos-Ciclo3\Reproductor-de-musica\obj\Debug\Reproduc.5EC8B69E.Up2Date
 C:\Users\ander\Documentos\Proyectos-Ciclo3\Reproductor-de-musica\obj\Debug\Reproductor de Musica.exe
 C:\Users\ander\Documentos\Proyectos-Ciclo3\Reproductor-de-musica\obj\Debug\Reproductor de Musica.pdb
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\Interop.WMPLib.dll
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Interop.WMPLib.dll
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor de Musica.csproj.ResolveComReference.cache
+C:\Users\diego\OneDrive\Documentos\UDB\ciclo 3\progra\Reproductor de musica\obj\Debug\Reproductor_de_Musica.FrmCrearPlaylist.resources
