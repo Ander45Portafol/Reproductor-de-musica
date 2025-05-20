@@ -25,15 +25,16 @@ namespace Reproductor_de_Musica
         private void FrmCanciones_Load(object sender, EventArgs e)
         {
             CargarCancionesEnLabels();
+            txtbuscar.Select();
 
             // Aplica bordes redondos al formulario
             RoundedForm.ApplyRoundCorners(this, 30);
 
             // Aplica bordes redondos al panel del menú (pnlMenu)
-            RoundedForm.ApplyRoundCorners(pnlmenu, 20);
+            //RoundedForm.ApplyRoundCorners(pnlmenu, 20);
 
-            pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Nuevo color (51, 51, 153)
-            pnlmenu.Padding = new Padding(10); // Margen interno
+            //pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Nuevo color (51, 51, 153)
+            //pnlmenu.Padding = new Padding(10); // Margen interno
 
             // Aplicar bordes redondos al Panel que contiene el TextBox (pnlTextBoxContainer)
             RoundedForm.ApplyRoundCorners(pnlTextBoxContainer, 15); // Radio de 15 píxeles
@@ -108,7 +109,7 @@ namespace Reproductor_de_Musica
             RoundedForm.ApplyRoundCorners(this, 30);
 
             // Re-aplica bordes redondos al panel del menú
-            RoundedForm.ApplyRoundCorners(pnlmenu, 20);
+            //RoundedForm.ApplyRoundCorners(pnlmenu, 20);
 
             // Re-aplicar bordes redondos al Panel que contiene el TextBox
             RoundedForm.ApplyRoundCorners(pnlTextBoxContainer, 15);
@@ -465,5 +466,9 @@ namespace Reproductor_de_Musica
             }
         }
 
+        private void lstSugerenciasCanciones_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

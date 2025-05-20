@@ -141,6 +141,7 @@
             this.BtnAlbum.Text = "Albumes";
             this.BtnAlbum.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAlbum.UseVisualStyleBackColor = true;
+            this.BtnAlbum.Click += new System.EventHandler(this.BtnAlbum_Click);
             // 
             // BtnCanciones
             // 
@@ -159,6 +160,7 @@
             this.BtnCanciones.Text = "Canciones";
             this.BtnCanciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCanciones.UseVisualStyleBackColor = true;
+            this.BtnCanciones.Click += new System.EventHandler(this.BtnCanciones_Click);
             // 
             // BtnArtista
             // 
@@ -233,6 +235,7 @@
             this.Name = "FrmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDashboard";
+            this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -75,5 +75,23 @@ namespace Reproductor_de_Musica
             this.Hide();
             frmLogin.Show();
         }
+
+        private void FrmDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCanciones_Click(object sender, EventArgs e)
+        {
+            FrmCanciones formCancion= new FrmCanciones();
+            CargarFormularioEnPanel(formCancion);
+
+        }
+
+        private void BtnAlbum_Click(object sender, EventArgs e)
+        {
+            FormAlbum formAlbum = new FormAlbum();
+            CargarFormularioEnPanel(formAlbum);
+        }
     }
 }

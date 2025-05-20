@@ -49,16 +49,18 @@
             this.pnllogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(62)))), ((int)(((byte)(155)))));
             this.pnllogin.Controls.Add(this.pictureBox1);
             this.pnllogin.Location = new System.Drawing.Point(0, 0);
+            this.pnllogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnllogin.Name = "pnllogin";
-            this.pnllogin.Size = new System.Drawing.Size(200, 405);
+            this.pnllogin.Size = new System.Drawing.Size(267, 498);
             this.pnllogin.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 122);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 150);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 151);
+            this.pictureBox1.Size = new System.Drawing.Size(267, 186);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -67,9 +69,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 35);
+            this.label1.Location = new System.Drawing.Point(332, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 28);
+            this.label1.Size = new System.Drawing.Size(413, 37);
             this.label1.TabIndex = 41;
             this.label1.Text = "¡BIENVENIDO A HARMONIQ!";
             // 
@@ -77,9 +80,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(250, 101);
+            this.label2.Location = new System.Drawing.Point(333, 124);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 19);
+            this.label2.Size = new System.Drawing.Size(195, 23);
             this.label2.TabIndex = 42;
             this.label2.Text = "Correo electrónico";
             // 
@@ -87,31 +91,33 @@
             // 
             this.txtcorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcorreo.Location = new System.Drawing.Point(254, 122);
-            this.txtcorreo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcorreo.Location = new System.Drawing.Point(339, 150);
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcorreo.Multiline = true;
             this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(351, 28);
+            this.txtcorreo.Size = new System.Drawing.Size(467, 34);
             this.txtcorreo.TabIndex = 55;
             // 
             // txtcontraseña
             // 
             this.txtcontraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcontraseña.Location = new System.Drawing.Point(254, 208);
-            this.txtcontraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcontraseña.Location = new System.Drawing.Point(339, 256);
+            this.txtcontraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcontraseña.Multiline = true;
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(351, 30);
+            this.txtcontraseña.PasswordChar = '*';
+            this.txtcontraseña.Size = new System.Drawing.Size(467, 36);
             this.txtcontraseña.TabIndex = 57;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(250, 187);
+            this.label3.Location = new System.Drawing.Point(333, 230);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 19);
+            this.label3.Size = new System.Drawing.Size(123, 23);
             this.label3.TabIndex = 56;
             this.label3.Text = "Contraseña";
             // 
@@ -121,9 +127,10 @@
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.Color.White;
-            this.btnIniciar.Location = new System.Drawing.Point(325, 292);
+            this.btnIniciar.Location = new System.Drawing.Point(433, 359);
+            this.btnIniciar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(180, 46);
+            this.btnIniciar.Size = new System.Drawing.Size(240, 57);
             this.btnIniciar.TabIndex = 58;
             this.btnIniciar.Text = "Iniciar Sesión";
             this.btnIniciar.UseVisualStyleBackColor = false;
@@ -134,9 +141,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(241, 363);
+            this.label4.Location = new System.Drawing.Point(321, 447);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 19);
+            this.label4.Size = new System.Drawing.Size(248, 23);
             this.label4.TabIndex = 60;
             this.label4.Text = "¿No tienes una cuenta? ";
             // 
@@ -145,9 +153,10 @@
             this.LinkSuscrip.AutoSize = true;
             this.LinkSuscrip.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LinkSuscrip.LinkColor = System.Drawing.Color.Black;
-            this.LinkSuscrip.Location = new System.Drawing.Point(427, 363);
+            this.LinkSuscrip.Location = new System.Drawing.Point(569, 447);
+            this.LinkSuscrip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LinkSuscrip.Name = "LinkSuscrip";
-            this.LinkSuscrip.Size = new System.Drawing.Size(174, 18);
+            this.LinkSuscrip.Size = new System.Drawing.Size(219, 23);
             this.LinkSuscrip.TabIndex = 61;
             this.LinkSuscrip.TabStop = true;
             this.LinkSuscrip.Text = "Suscríbete a Harmoniq";
@@ -157,20 +166,20 @@
             // 
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.Image = global::Reproductor_de_Musica.Properties.Resources.x_regular_24;
-            this.BtnCerrar.Location = new System.Drawing.Point(605, 3);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnCerrar.Location = new System.Drawing.Point(807, 4);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(24, 19);
+            this.BtnCerrar.Size = new System.Drawing.Size(32, 23);
             this.BtnCerrar.TabIndex = 59;
             this.BtnCerrar.UseVisualStyleBackColor = true;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(637, 403);
+            this.ClientSize = new System.Drawing.Size(849, 496);
             this.Controls.Add(this.LinkSuscrip);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCerrar);
@@ -182,6 +191,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnllogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
