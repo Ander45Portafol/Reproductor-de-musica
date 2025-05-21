@@ -103,12 +103,6 @@
     <Compile Include="FrmPlaylist.Designer.cs">
       <DependentUpon>FrmPlaylist.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRadio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRadio.Designer.cs">
-      <DependentUpon>FrmRadio.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSuscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlaylist.resx">
       <DependentUpon>FrmPlaylist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRadio.resx">
-      <DependentUpon>FrmRadio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSuscripcion.resx">
       <DependentUpon>FrmSuscripcion.cs</DependentUpon>

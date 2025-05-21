@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnCSesion = new System.Windows.Forms.Button();
             this.BtnListas = new System.Windows.Forms.Button();
-            this.BtnRadio = new System.Windows.Forms.Button();
             this.BtnAlbum = new System.Windows.Forms.Button();
             this.BtnCanciones = new System.Windows.Forms.Button();
             this.BtnArtista = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             this.panel1.Controls.Add(this.BtnCSesion);
             this.panel1.Controls.Add(this.BtnListas);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.BtnRadio);
             this.panel1.Controls.Add(this.BtnAlbum);
             this.panel1.Controls.Add(this.BtnCanciones);
             this.panel1.Controls.Add(this.BtnArtista);
@@ -105,24 +103,6 @@
             this.BtnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnListas.UseVisualStyleBackColor = true;
             this.BtnListas.Click += new System.EventHandler(this.BtnListas_Click);
-            // 
-            // BtnRadio
-            // 
-            this.BtnRadio.FlatAppearance.BorderSize = 0;
-            this.BtnRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRadio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRadio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(192)))), ((int)(((byte)(193)))));
-            this.BtnRadio.Image = global::Reproductor_de_Musica.Properties.Resources.radio_solid_241;
-            this.BtnRadio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRadio.Location = new System.Drawing.Point(0, 335);
-            this.BtnRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnRadio.Name = "BtnRadio";
-            this.BtnRadio.Size = new System.Drawing.Size(225, 58);
-            this.BtnRadio.TabIndex = 4;
-            this.BtnRadio.Tag = "";
-            this.BtnRadio.Text = "Radio";
-            this.BtnRadio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnRadio.UseVisualStyleBackColor = true;
             // 
             // BtnAlbum
             // 
@@ -247,7 +227,6 @@
         private System.Windows.Forms.Button BtnArtista;
         private System.Windows.Forms.Button BtnCanciones;
         private System.Windows.Forms.Button BtnAlbum;
-        private System.Windows.Forms.Button BtnRadio;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnListas;
         private System.Windows.Forms.Panel panel1;
