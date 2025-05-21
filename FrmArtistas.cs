@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,13 @@ using System.Windows.Forms;
 
 namespace Reproductor_de_Musica
 {
+
     public partial class FrmArtistas : Form
     {
+        Dictionary<PictureBox, string> urlsAudio = new Dictionary<PictureBox, string>();
+        ArbolBinario arbol = new ArbolBinario();
+        string connectionString = "Server=DESKTOP-RA97V0D\\MSSQLSERVER01;Database=Harmoniq;Trusted_Connection=True;";
+
         public FrmArtistas()
         {
             InitializeComponent();
@@ -23,127 +29,89 @@ namespace Reproductor_de_Musica
 
         private void FrmArtistas_Load(object sender, EventArgs e)
         {
-            int idArtista = 1; // cambia esto si es necesario
-
-            CargarImagenArtista(idArtista);
-            CargarCancionesPopulares(idArtista); // << añade esta líne
+            CargarArtistasDesdeBD();
 
         }
 
-        private void CargarImagenArtista(int idArtista)
+        private void CargarArtistasDesdeBD()
         {
-            string cadenaConexion = "Server=DESKTOP-RA97V0D\\MSSQLSERVER01;Database=Harmoniq;Integrated Security=True";
-            string query = "SELECT url_foto_artista FROM Artistas WHERE id_artista = @id";
-
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-            using (SqlCommand comando = new SqlCommand(query, conexion))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                comando.Parameters.AddWithValue("@id", idArtista);
-
-                try
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Artistas", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    conexion.Open();
-                    SqlDataReader lector = comando.ExecuteReader();
-
-                    if (lector.Read() && !lector.IsDBNull(0))
+                    Artista artista = new Artista()
                     {
-                        string url = lector.GetString(0);
-                        pbFotoArtista.Load(url);
-                    }
-                    else
-                    {
-                        pbFotoArtista.Image = null;
-                    }
-
-                    lector.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+                        Id = reader["id_artista"] != DBNull.Value ? Convert.ToInt32(reader["id_artista"]) : 0,
+                        Nombre = reader["nombre_artista"] != DBNull.Value ? reader["nombre_artista"].ToString() : "",
+                        Nacionalidad = reader["nacionalidad"] != DBNull.Value ? reader["nacionalidad"].ToString() : "",
+                      //  Reproducciones = reader["reproducciones"] != DBNull.Value ? reader["reproducciones"].ToString() : "",
+                        UrlImagen = reader["url_foto_artista"] != DBNull.Value ? reader["url_foto_artista"].ToString() : ""
+                    };
+                    arbol.Insertar(artista);
                 }
             }
         }
 
-        private void CargarCancionesPopulares(int idArtista)
+        private void CargarCancionesDelArtista(int idArtista)
         {
-            string cadenaConexion = "Server=DESKTOP-RA97V0D\\MSSQLSERVER01;Database=Harmoniq;Integrated Security=True";
-            string query = @"
-            SELECT TOP 6 url_imagen 
-            FROM Canciones 
-            WHERE id_artista = @id 
-            ORDER BY reproducciones DESC";
+            urlsAudio.Clear(); // Limpiar datos anteriores
+            List<string> urlsImagenes = new List<string>();
+            List<string> urlsAudios = new List<string>();
 
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-            using (SqlCommand comando = new SqlCommand(query, conexion))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                comando.Parameters.AddWithValue("@id", idArtista);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT TOP 6 url_imagen, url_audio FROM Canciones WHERE id_artista = @idArtista", conn);
+                cmd.Parameters.AddWithValue("@idArtista", idArtista);
 
-                try
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    conexion.Open();
-                    SqlDataReader lector = comando.ExecuteReader();
+                    if (reader["url_imagen"] != DBNull.Value)
+                        urlsImagenes.Add(reader["url_imagen"].ToString());
 
-                    // Lista de tus PictureBoxes
-                    PictureBox[] pictureBoxes = new PictureBox[] {
-                    pictureBox1, pictureBox2, pictureBox3,
-                    pictureBox4, pictureBox5, pictureBox6
-            };
-
-                    int index = 0;
-
-                    while (lector.Read() && index < pictureBoxes.Length)
-                    {
-                        if (!lector.IsDBNull(0))
-                        {
-                            string urlImagen = lector.GetString(0);
-                            pictureBoxes[index].Load(urlImagen);
-                        }
-                        else
-                        {
-                            pictureBoxes[index].Image = null;
-                        }
-
-                        index++;
-                    }
-
-                    lector.Close();
+                    if (reader["url_audio"] != DBNull.Value)
+                        urlsAudios.Add(reader["url_audio"].ToString());
                 }
-                catch (Exception ex)
+            }
+
+            // Asignar imágenes a los PictureBoxes
+            PictureBox[] pictureBoxes = { PictureBox1, PictureBox2, PictureBox3, PictureBox4, PictureBox5, PictureBox6 };
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                pictureBoxes[i].Click -= PictureBox_Click; // Evitar múltiples asignaciones
+
+                if (i < urlsImagenes.Count && i < urlsAudios.Count)
                 {
-                    MessageBox.Show("Error al cargar canciones populares: " + ex.Message);
+                    pictureBoxes[i].Load(urlsImagenes[i]);
+                    urlsAudio[pictureBoxes[i]] = urlsAudios[i];
+                    pictureBoxes[i].Click += PictureBox_Click;
+                }
+                else
+                {
+                    pictureBoxes[i].Image = null;
+                    urlsAudio[pictureBoxes[i]] = null;
                 }
             }
         }
 
-
-
-
-        private void ApplyRoundedCorners(Control control, int cornerRadius)
+        private void PictureBox_Click(object sender, EventArgs e)
         {
-            // Crear un camino gráfico con bordes redondos
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90); // Esquina superior izquierda
-            path.AddArc(control.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90); // Esquina superior derecha
-            path.AddArc(control.Width - cornerRadius, control.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90); // Esquina inferior derecha
-            path.AddArc(0, control.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90); // Esquina inferior izquierda
-            path.CloseFigure();
+            PictureBox pic = sender as PictureBox;
 
-            // Asignar la región al control
-            control.Region = new Region(path);
-        }
-
-        private void ApplyRoundedCornersToDataGridView(DataGridView dgv, int cornerRadius)
-        {
-            // Crear un camino gráfico con bordes redondos
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90); // Esquina superior izquierda
-            path.AddArc(dgv.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90); // Esquina superior derecha
-            path.AddArc(dgv.Width - cornerRadius, dgv.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90); // Esquina inferior derecha
-            path.AddArc(0, dgv.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90); // Esquina inferior izquierda
-            path.CloseFigure();
-
-            // Asignar la región al DataGridView
-            dgv.Region = new Region(path);
+            if (pic != null && urlsAudio.ContainsKey(pic))
+            {
+                string url = urlsAudio[pic];
+                if (!string.IsNullOrEmpty(url))
+                {
+                    wmpReproductor.URL = url;
+                    wmpReproductor.Ctlcontrols.play();
+                }
+            }
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -177,6 +145,29 @@ namespace Reproductor_de_Musica
             this.Hide();
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtBuscar.Text.Trim();
+            Artista artista = arbol.Buscar(nombre);
+            if (artista != null)
+            {
+                pbFotoArtista.Load(artista.UrlImagen); // Mostrar imagen del artista
+                CargarCancionesDelArtista(artista.Id); // Cargar canciones populares
+
+                // Mostrar nombre y nacionalidad
+                lblNombre.Text = artista.Nombre;
+                lblNacionalidad.Text = artista.Nacionalidad;
+            }
+            else
+            {
+                MessageBox.Show("Artista no encontrado.");
+                pbFotoArtista.Image = null;
+                lblNacionalidad.Text = "";
+                lblNacionalidad.Text = "";
+            }
+
+        }
+
+        
     }
-    
 }
