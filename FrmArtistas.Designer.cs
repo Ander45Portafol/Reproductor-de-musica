@@ -59,6 +59,8 @@
             // 
             // PictureBox2
             // 
+
+
             this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.PictureBox2.Location = new System.Drawing.Point(192, 348);
             this.PictureBox2.Name = "PictureBox2";
@@ -66,9 +68,13 @@
             this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox2.TabIndex = 48;
             this.PictureBox2.TabStop = false;
+
+
             // 
             // PictureBox3
             // 
+
+
             this.PictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.PictureBox3.Location = new System.Drawing.Point(322, 347);
             this.PictureBox3.Name = "PictureBox3";
@@ -76,9 +82,12 @@
             this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox3.TabIndex = 47;
             this.PictureBox3.TabStop = false;
+
+
             // 
             // PictureBox4
             // 
+
             this.PictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.PictureBox4.Location = new System.Drawing.Point(453, 347);
             this.PictureBox4.Name = "PictureBox4";
@@ -86,9 +95,12 @@
             this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox4.TabIndex = 46;
             this.PictureBox4.TabStop = false;
+
+
             // 
             // PictureBox5
             // 
+
             this.PictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.PictureBox5.Location = new System.Drawing.Point(594, 347);
             this.PictureBox5.Name = "PictureBox5";
@@ -106,9 +118,11 @@
             this.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox6.TabIndex = 44;
             this.PictureBox6.TabStop = false;
+
             // 
             // PictureBox1
             // 
+
             this.PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.PictureBox1.Location = new System.Drawing.Point(61, 347);
             this.PictureBox1.Name = "PictureBox1";
@@ -117,14 +131,16 @@
             this.PictureBox1.TabIndex = 43;
             this.PictureBox1.TabStop = false;
 //            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(59, 317);
+            this.label8.Location = new System.Drawing.Point(79, 390);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 19);
+            this.label8.Size = new System.Drawing.Size(191, 23);
             this.label8.TabIndex = 42;
             this.label8.Text = "Los mas populares";
             // 
@@ -133,22 +149,26 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 150);
+            this.dataGridView1.Location = new System.Drawing.Point(83, 185);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(772, 140);
+
             this.dataGridView1.TabIndex = 41;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 114);
+            this.label1.Location = new System.Drawing.Point(79, 140);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 19);
+            this.label1.Size = new System.Drawing.Size(115, 23);
             this.label1.TabIndex = 40;
             this.label1.Text = "Resultados";
             // 
+
             // pbFotoArtista
             // 
             this.pbFotoArtista.Image = ((System.Drawing.Image)(resources.GetObject("pbFotoArtista.Image")));
@@ -168,6 +188,7 @@
             this.lblNacionalidad.Location = new System.Drawing.Point(211, 189);
             this.lblNacionalidad.Name = "lblNacionalidad";
             this.lblNacionalidad.Size = new System.Drawing.Size(77, 15);
+
             this.lblNacionalidad.TabIndex = 42;
             this.lblNacionalidad.Text = "Nacionalidad";
             // 
@@ -177,9 +198,11 @@
             this.lblNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.lblNombre.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.Black;
+
             this.lblNombre.Location = new System.Drawing.Point(210, 166);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(137, 23);
+
             this.lblNombre.TabIndex = 41;
             this.lblNombre.Text = "Nombre artista";
             // 
@@ -189,9 +212,10 @@
             this.lblSeguidores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.lblSeguidores.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeguidores.ForeColor = System.Drawing.Color.Black;
-            this.lblSeguidores.Location = new System.Drawing.Point(714, 172);
+            this.lblSeguidores.Location = new System.Drawing.Point(952, 212);
+            this.lblSeguidores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeguidores.Name = "lblSeguidores";
-            this.lblSeguidores.Size = new System.Drawing.Size(50, 17);
+            this.lblSeguidores.Size = new System.Drawing.Size(69, 20);
             this.lblSeguidores.TabIndex = 52;
             this.lblSeguidores.Text = "657677";
             // 
@@ -201,9 +225,10 @@
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.label15.Font = new System.Drawing.Font("Corbel", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(766, 178);
+            this.label15.Location = new System.Drawing.Point(1021, 219);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 11);
+            this.label15.Size = new System.Drawing.Size(62, 14);
             this.label15.TabIndex = 53;
             this.label15.Text = "Seguidores";
             // 
@@ -213,9 +238,10 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Location = new System.Drawing.Point(128, 29);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
+
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(576, 36);
+            this.txtBuscar.Size = new System.Drawing.Size(767, 44);
             this.txtBuscar.TabIndex = 54;
             // 
             // btnBuscar
@@ -223,9 +249,10 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(692, 29);
+            this.btnBuscar.Location = new System.Drawing.Point(923, 36);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(44, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(59, 44);
             this.btnBuscar.TabIndex = 58;
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -242,11 +269,12 @@
             // 
             // FrmArtistas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 604);
             this.Controls.Add(this.wmpReproductor);
+
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label15);
@@ -264,6 +292,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmArtistas";
             this.Text = "FrmArtistas";
             this.Load += new System.EventHandler(this.FrmArtistas_Load);

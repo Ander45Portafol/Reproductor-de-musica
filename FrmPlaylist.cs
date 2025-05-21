@@ -2,28 +2,36 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Servicios;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Reproductor_de_Musica
 {
     public partial class FrmPlaylist : Form
     {
-        public FrmPlaylist()
+        private int id_user;
+        private Queue<DataRow> colaPlaylists = new Queue<DataRow>();
+        private DataTable datosOriginales;
+        public FrmPlaylist(int usuario)
         {
             InitializeComponent();
             this.Load += FrmPlaylist_Load;
             this.Resize += FrmPlaylist_Resize;
-           
+            CargarListas(usuario);
+            id_user = usuario;
+            ConfigurarComboBoxFiltro();
         }
 
         private void FrmPlaylist_Load(object sender, EventArgs e)
         {
-           
+
             // Aplica bordes redondos al formulario
             RoundedForm.ApplyRoundCorners(this, 30);
 
@@ -37,17 +45,17 @@ namespace Reproductor_de_Musica
             //RoundedForm.ApplyRoundCorners(pnlTextBoxContainer, 15); // Radio de 15 píxeles
 
             // Configurar el Panel que contiene el TextBox
-           // pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Color de fondo del Panel
+            // pnlmenu.BackColor = Color.FromArgb(51, 51, 153); // Color de fondo del Panel
             //pnlTextBoxContainer.Padding = new Padding(5); // Margen interno
 
             // Configurar el TextBox dentro del Panel
-           // txtbuscar.BorderStyle = BorderStyle.None; // Sin borde predeterminado
-           // txtbuscar.Dock = DockStyle.Fill; // Ocupar todo el espacio del Panel
-          //  txtbuscar.BackColor = Color.White; // Color de fondo del TextBox
+            // txtbuscar.BorderStyle = BorderStyle.None; // Sin borde predeterminado
+            // txtbuscar.Dock = DockStyle.Fill; // Ocupar todo el espacio del Panel
+            //  txtbuscar.BackColor = Color.White; // Color de fondo del TextBox
             //txtbuscar.ForeColor = Color.Black; // Color del texto
 
             // Aplicar bordes redondos al DataGridView
-            ApplyRoundedCornersToDataGridView(dataGridView1, 15); // Radio de 15 píxeles
+            //ApplyRoundedCornersToDataGridView(dataGridView1, 15); // Radio de 15 píxeles
 
             // Aplicar bordes redondos al PictureBox
             //ApplyRoundedCorners(pictureBox15, 15); // Radio de 15 píxeles
@@ -133,37 +141,51 @@ namespace Reproductor_de_Musica
 
         private void label2_Click(object sender, EventArgs e)
         {
-            FrmInicio fomr = new FrmInicio();
-            fomr.Show();
-            this.Hide();
-        }
 
+        }
+        private void CargarListas(int id)
+        {
+            using (SqlConnection conn = Conexion.DatabaseConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT a.nombre_lista, a.fecha_creacion, b.nombre_usuario FROM Lista a, Usuario b WHERE a.id_usuario=b.id_usuario AND a.id_usuario= " + id;
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(query, conn);
+                    datosOriginales = new DataTable();
+                    adaptador.Fill(datosOriginales);
+
+                    // Llenar la cola inicialmente
+                    ActualizarColaPlaylists();
+
+                    // Configurar ComboBox de filtros
+                    ConfigurarComboBoxFiltro();
+                }
+                catch
+                {
+                    MessageBox.Show("Error al cargar canciones");
+                }
+            }
+        }
         private void label3_Click(object sender, EventArgs e)
         {
-            FrmArtistas fomr = new FrmArtistas();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            FrmCanciones fomr = new FrmCanciones();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            FrmPlaylist fomr = new FrmPlaylist();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            FrmRadio fomr = new FrmRadio();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void CargarFormularioEnPanel(Form formulario)
@@ -186,13 +208,134 @@ namespace Reproductor_de_Musica
             // Mostrar el formulario
             formulario.Show();
         }
+        private void FormAgregar_DatoAgregado(object sender, EventArgs e)
+        {
+            // Aquí es donde actualizas tu FormPrincipal
+            CargarListas(id_user); // Vuelve a cargar los datos en tu DataGridView o ListBox
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-            FrmPlaylistBuscar frmPlaylistBuscar = new FrmPlaylistBuscar();
-            CargarFormularioEnPanel(frmPlaylistBuscar);
+            FrmCrearPlaylist frmCrearPlaylist = new FrmCrearPlaylist(id_user);
+            frmCrearPlaylist.DatoAgregado += FormAgregar_DatoAgregado;
+            frmCrearPlaylist.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgvPlaylist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar que el doble clic no sea en el encabezado de las columnas o filas
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtener la fila en la que se hizo doble clic
+                DataGridViewRow filaSeleccionada = DgvPlaylist.Rows[e.RowIndex];
+
+                // Suponiendo que el dato que quieres está en la columna con índice '0'
+                // Puedes cambiar el índice por el número de la columna que necesites.
+                string dato = filaSeleccionada.Cells[0].Value?.ToString();
+                //Abrimos el formulario pero usando el nuevo constructor para especificar que
+                //se actualizaran los datos
+                FrmPlaylistBuscar frmBuscarPlaylist = new FrmPlaylistBuscar(dato);
+                CargarFormularioEnPanel(frmBuscarPlaylist);
+            }
+        }
+
+        private void ConfigurarComboBoxFiltro()
+        {
+            // Limpiar items existentes primero
+            comboBoxFiltro.Items.Clear();
+
+            // Agregar items únicos
+            if (comboBoxFiltro.Items.Count == 0)
+            {
+                comboBoxFiltro.Items.AddRange(new object[]
+                {
+                     "Todos",
+                     "Por nombre (A-Z)",
+                     "Por nombre (Z-A)",
+                     "Más recientes primero",
+                     "Más antiguas primero"
+                });
+            }
+
+            comboBoxFiltro.SelectedIndex = 0;
+        }
+
+        private void ActualizarColaPlaylists()
+        {
+            colaPlaylists.Clear();
+
+            // Obtener vista filtrada/ordenada según selección del ComboBox
+            DataView vistaFiltrada = datosOriginales.DefaultView;
+
+            switch (comboBoxFiltro.SelectedItem?.ToString())
+            {
+                case "Por nombre (A-Z)":
+                    vistaFiltrada.Sort = "nombre_lista ASC";
+                    break;
+
+                case "Por nombre (Z-A)":
+                    vistaFiltrada.Sort = "nombre_lista DESC";
+                    break;
+
+                case "Más recientes primero":
+                    vistaFiltrada.Sort = "fecha_creacion DESC";
+                    break;
+
+                case "Más antiguas primero":
+                    vistaFiltrada.Sort = "fecha_creacion ASC";
+                    break;
+
+                default:
+                    vistaFiltrada.Sort = "nombre_lista ASC";
+                    break;
+            }
+
+            // Llenar la cola con los datos ordenados
+            foreach (DataRowView row in vistaFiltrada)
+            {
+                colaPlaylists.Enqueue(row.Row);
+            }
+
+            MostrarDatosEnDataGridView();
+        }
+
+        private void MostrarDatosEnDataGridView()
+        {
+            try
+            {
+                // Convertir la cola a un DataTable para mostrarla en el DataGridView
+                DataTable dt = new DataTable();
+                dt.Columns.Add("nombre_lista");
+                dt.Columns.Add("fecha_creacion");
+                dt.Columns.Add("nombre_usuario");
+
+                foreach (DataRow row in colaPlaylists)
+                {
+                    dt.Rows.Add(row["nombre_lista"], row["fecha_creacion"], row["nombre_usuario"]);
+                }
+
+                DgvPlaylist.DataSource = dt;
+
+                // Configurar las columnas - usando los nombres exactos
+                DgvPlaylist.Columns["nombre_lista"].HeaderText = "Playlist";
+                DgvPlaylist.Columns["nombre_usuario"].HeaderText = "Usuario";
+                DgvPlaylist.Columns["fecha_creacion"].HeaderText = "Fecha creada";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al mostrar datos: {ex.Message}");
+            }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ActualizarColaPlaylists();
         }
     }
-    
-} 
+}
 
 

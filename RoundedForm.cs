@@ -8,12 +8,12 @@ public static class RoundedForm
 {
     [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
     private static extern IntPtr CreateRoundRectRgn(
-        int nLeftRect,     // x-coordinate of upper-left corner
-        int nTopRect,      // y-coordinate of upper-left corner
-        int nRightRect,    // x-coordinate of lower-right corner
-        int nBottomRect,   // y-coordinate of lower-right corner
-        int nWidthEllipse, // width of ellipse
-        int nHeightEllipse // height of ellipse
+        int nLeftRect,     // x-coord de arriba izq 
+        int nTopRect,      // y-coord de arriba derecha
+        int nRightRect,    // x-coord esquina inferior derecha
+        int nBottomRect,   // y-coord esquina inferior izquierda
+        int nWidthEllipse, // ancho de la elipse
+        int nHeightEllipse // alatura de elipse
     );
 
     // Método para redondear bordes de un formulario

@@ -18,7 +18,6 @@ namespace Reproductor_de_Musica
             InitializeComponent();
             this.Load += FrmInicio_Load;
             this.Resize += FrmInicio_Resize;
-
         }
         private void FrmInicio_Load(object sender, EventArgs e)
         {
@@ -86,9 +85,7 @@ namespace Reproductor_de_Musica
 
         private void label5_Click(object sender, EventArgs e)
         {
-            FrmPlaylist fomr = new FrmPlaylist();
-            fomr.Show();
-            this.Hide();
+
         }
 
         private void label6_Click(object sender, EventArgs e)

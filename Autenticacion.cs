@@ -41,6 +41,44 @@ namespace Reproductor_de_Musica
                 return false;
             }
         }
+        public static int Validar_usuario(string correo, string contraseña)
+        {
+            try
+            {
+                using (SqlConnection connection = Conexion.DatabaseConnection())
+                {
+                    connection.Open();
+                    string query = "SELECT id_usuario FROM Usuario WHERE correo_electronico=@Correo AND clave_usuario=@Contraseña";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Correo", correo);
+                        cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error de SQL: {sqlEx.Message}\nNúmero: {sqlEx.Number}");
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}");
+                return -1; 
+            }
+        }
     }
 }
 
